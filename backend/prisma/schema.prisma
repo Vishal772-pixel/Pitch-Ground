@@ -6,11 +6,12 @@ generator client {
 }
 // This section deFINES HOW PRISMA WOULD BE CONNECTED WITH THE BACKEND
 datasource db {
-    provider = "postgresql"// defines the prisma that which db provider is used here ..as theirs lot of SQL database types
+    provider = "postgresql"
+// defines the prisma that which db provider is used here ..as theirs lot of SQL database types in market 
     url =env("DATABASE_URL")
 }
 
-Model User {// Our user model
+Model User {
     id String @id @default(cuid()) // @ id => primary key , @default(cuid())=> prisma will automatically generate its uniqueid like (UUID)
     name String 
     email String @unique //no duplicate email
