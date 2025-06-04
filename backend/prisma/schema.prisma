@@ -15,9 +15,15 @@ Model User {// Our user model
     name String 
     email String @unique //no duplicate email
     password String 
+    role Role @default(FOUNDER)
     createdAt DateTime @default(now())
+}
+enum Role {
+    FOUNDER
+    INVESTOR
+}
 
     
     // Now install 2 dependecies =>  npx prisma migrate dev --name init
     //npx prisma generate
-}
+
