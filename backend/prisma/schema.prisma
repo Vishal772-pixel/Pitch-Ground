@@ -1,18 +1,20 @@
 
 // This section tells Prisma to generate a javascript or typescript client that we can use in our code 
+// This section deFINES HOW PRISMA WOULD BE CONNECTED WITH THE BACKEND
+
 
 generator client {
     provider = "prisma-client-js"
 }
-// This section deFINES HOW PRISMA WOULD BE CONNECTED WITH THE BACKEND
-datasource db {
+
+datasource db{
+ 
     provider = "postgresql"
-// defines the prisma that which db provider is used here ..as theirs lot of SQL database types in market 
     url =env("DATABASE_URL")
 }
 
 model User {
-    id String @id @default(cuid()) // @ id => primary key , @default(cuid())=> prisma will automatically generate its uniqueid like (UUID)
+    id String @id @default(cuid()) // @ id => primary key , @default(cuid())=> //prisma will automatically generate its uniqueid like (UUID)
     name String 
     email String @unique //no duplicate email
     password String 
@@ -28,4 +30,10 @@ enum Role {
     // Now install 2 dependecies =>  npx prisma migrate dev --name init
     //npx prisma generate => to run prisma module and solve errors
     //npx prisma migrate dev=> to run prisma module and solve errors
+
+
+
+    //To push schema into Postgresql => npx prisma db push 
+    //npm i --save-dev prisma@latest
+    //npm i @prisma/client@latest
 
