@@ -11,7 +11,7 @@ datasource db {
     url =env("DATABASE_URL")
 }
 
-Model User {
+model User {
     id String @id @default(cuid()) // @ id => primary key , @default(cuid())=> prisma will automatically generate its uniqueid like (UUID)
     name String 
     email String @unique //no duplicate email
@@ -26,5 +26,6 @@ enum Role {
 
     
     // Now install 2 dependecies =>  npx prisma migrate dev --name init
-    //npx prisma generate
+    //npx prisma generate => to run prisma module and solve errors
+    //npx prisma migrate dev=> to run prisma module and solve errors
 

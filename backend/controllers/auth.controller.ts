@@ -1,6 +1,6 @@
 import {Request, Response } from "express";
 // import * as AuthService from "../services/auth.services.ts";
-import{prisma}from "../prisma"
+import { prisma } from "../prisma/prisma";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
