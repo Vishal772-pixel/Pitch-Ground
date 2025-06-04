@@ -34,9 +34,6 @@ if(!user||!user.pasword)
 {
     return res.status(401).json({message:"Invalid Credentials"});
 }
-
-
-
   const isMatch =await bcrypt.compare(password,user.password);
     if(!isMatch)
         {
